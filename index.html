@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3DGS Scene Explorer</title>
+  <meta
+    name="description"
+    content="A curated static site for exploring Gaussian Splatting scene viewers, match-ray demos, and multi-view camera layouts."
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">3D Gaussian Splatting Tutorial Hub</p>
+        <div class="hero-main">
+          <h1 class="hero-title">
+            <span class="hero-title-main">3DGS</span>
+            <span class="hero-title-sub">Scene Explorer</span>
+          </h1>
+          <div class="hero-side">
+            <p class="hero-text">
+              A curated landing page for standalone 3DGS viewers. Use it to inspect camera layouts,
+              compare two-view correspondences, and navigate scene-specific Plotly exports without
+              dumping every heavy artifact into one page.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-secondary" href="#guide">Viewing Notes</a>
+              <a class="button button-primary" href="#catalog">Browse Viewers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section teaser-section" aria-labelledby="teaser-title">
+        <div class="teaser-frame">
+          <img
+            class="teaser-image"
+            src="images/teaser.png"
+            alt="Gaussian splatting teaser showing a bicycle scene, camera frustums, and projected image planes."
+          >
+          <div class="teaser-copy">
+            <p class="eyebrow">Teaser</p>
+            <h2 id="teaser-title">Camera layout, image planes, and Gaussian context in one view</h2>
+            <p class="teaser-text">
+              The site focuses on interactive scene inspection: multi-view context for overall layout,
+              two-view match-ray pages for correspondence analysis, and direct links into standalone
+              Plotly viewers when deeper exploration is needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-notes" id="guide">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Guide</p>
+            <h2>Viewing Notes</h2>
+          </div>
+        </div>
+        <div class="guide-grid">
+          <article class="guide-card">
+            <h3>Start with multi-view</h3>
+            <p>Use the wider scene overview pages first to understand split coverage and camera layout.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Then open two-view demos</h3>
+            <p>Use two-view pages when explaining matched rays, local overlap, or correspondence quality.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Use the in-viewer controls</h3>
+            <p>Depth, image opacity, Gaussian brightness, and keyboard shortcuts are all embedded in each viewer.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="catalog">
+        <div class="section-heading catalog-heading">
+          <div>
+            <p class="eyebrow">Catalog</p>
+            <h2>Scene Viewers</h2>
+          </div>
+          <div class="filter-bar" id="filter-bar" aria-label="Scene filters"></div>
+        </div>
+        <div class="scene-list" id="scene-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="viewer-card-template">
+    <article class="viewer-card">
+      <div class="viewer-card-top">
+        <div>
+          <p class="viewer-type"></p>
+          <h3 class="viewer-title"></h3>
+        </div>
+        <span class="viewer-size"></span>
+      </div>
+      <p class="viewer-description"></p>
+      <div class="tag-row"></div>
+      <div class="card-actions">
+        <a class="button button-primary viewer-link" target="_blank" rel="noopener noreferrer">Open Viewer</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="viewers-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

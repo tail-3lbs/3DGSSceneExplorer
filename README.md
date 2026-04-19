@@ -2,6 +2,12 @@
 
 Static landing page for curated 3D Gaussian Splatting viewers.
 
+## Published page
+
+Visit the live site here:
+
+https://tail-3lbs.github.io/3DGSSceneExplorer/
+
 ## Repo contents
 
 - `index.html`: landing page
